@@ -68,7 +68,7 @@
     top: 50%;
     left: 50%;
     z-index: 0;
-    width: 100%;
+    width: calc(100% + 160px);
     height: 1px;
     transform: translateX(-50%);
   }
@@ -96,6 +96,9 @@
     .start,
     .end {
       font-size: 100px;
+    }
+    &:before {
+      width: calc(100% + 80px);
     }
   }
 }

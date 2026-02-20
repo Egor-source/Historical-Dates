@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import * as styles from './styles.module.scss';
 import { Editor } from '@monaco-editor/react';
 import { JsonEditorType } from './types';
@@ -44,7 +44,7 @@ const JsonEditor: FC<JsonEditorType> = ({ slides, onSave }) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const abortController = new AbortController();
     const signal = abortController.signal;
     window.addEventListener('mousemove', onMouseMove, { signal });
