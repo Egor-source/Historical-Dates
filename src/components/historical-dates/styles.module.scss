@@ -1,0 +1,147 @@
+.historical-dates {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  padding: 50px 80px;
+  border-left: 1px solid #303e5850;
+  border-right: 1px solid #303e5850;
+  &:before {
+    content: '';
+    background-color: #303e5850;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+
+    width: 1px;
+    height: calc(100% - 1px);
+    transform: translateY(-50%);
+  }
+}
+
+.title {
+  font-size: 56px;
+  line-height: 1;
+  margin-bottom: 100px;
+  position: relative;
+  color: #42567a;
+  font-weight: bold;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, #3877ee 0%, #ef5da8 100%);
+  }
+}
+
+.wrapper {
+  position: relative;
+  margin-bottom: 140px;
+}
+
+.dates {
+  display: flex;
+  pointer-events: none;
+  justify-content: center;
+  gap: 30px;
+  .start,
+  .end {
+    font-size: 200px;
+    font-weight: bold;
+    line-height: 0.8;
+    z-index: 1;
+  }
+  .start {
+    color: #5d5fef;
+  }
+  .end {
+    color: #ef5da8;
+  }
+
+  &:before {
+    content: '';
+    background-color: #303e5850;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateX(-50%);
+  }
+}
+
+.period-title {
+  display: none;
+}
+
+@media (max-width: $bp-tablet-lg) {
+  .historical-dates {
+    padding: 50px 40px;
+  }
+  .wrapper {
+    margin-bottom: 70px;
+  }
+  .title {
+    font-size: 28px;
+    margin-bottom: 50px;
+    &:before {
+      left: -40px;
+    }
+  }
+  .dates {
+    .start,
+    .end {
+      font-size: 100px;
+    }
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .historical-dates {
+    padding: 50px 20px;
+  }
+  .slider-wrapper {
+    padding-top: 20px;
+    border-top: 1px solid #303e5850;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 80px;
+  }
+  .wrapper {
+    margin-bottom: 20px;
+  }
+  .historical-dates {
+    &:before {
+      display: none;
+    }
+  }
+  .dates {
+    margin-bottom: 30px;
+    .start,
+    .end {
+      font-size: 56px;
+    }
+    &:before {
+      display: none;
+    }
+  }
+
+  .title {
+    font-size: 20px;
+    &:before {
+      display: none;
+    }
+  }
+
+  .period-title {
+    display: block;
+    font-weight: bold;
+    color: #42567a;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+}
